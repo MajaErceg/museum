@@ -1,0 +1,49 @@
+
+  <div (mouseover)="vreme($event)" class="px-xl-5" style="background-image: url('/assets/images/bg401.jpg/');">
+  
+    <div  (mouseover)="cena($event)" class="column"  *ngFor="let i of izlozbe" style="margin:20px">
+        <div class="col-lg-8 mx-auto"  >
+            <!-- List group-->
+            <ul class="list-group shadow" >
+                <!-- list group item-->
+                <li class="list-group-item" style="background-color: rgb(206, 174, 135, 0.9); margin: 20px">
+                    <!-- Custom content-->
+                    <p class="mt-0 font-weight-bold mb-2">{{i.naziv}}</p>
+                    <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                        <img src="{{i.url}}" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                           
+                        <div class="row">
+                            <p >Broj eksponata : {{i.brEksponata}}</p>
+                             <p  >Vrsta eksponata : {{i.eksponati}}</p>
+                             <p  >Tip postavke : {{i.tip}}</p>
+                           </div>
+                     
+                        
+                    </div> <!-- End -->
+                </li> <!-- End -->
+            
+               
+            </ul> <!-- End -->
+
+        </div><br>
+        <div  class="flex justify-center items-center" style= " margin:0 auto; width: 220px;background-color: rgb(206, 174, 135, 0.9);">
+            <div  class="pr-8 ">
+            <button *ngIf="this.vrednost" style="margin: 10px;" (click)="deleteIzlozba(i)" class="btn btn-sm btn-danger btn-delete-user">
+                Izbriši
+            </button> </div>
+            <div  class="pr-8 ">
+            <button class="btn btn-sm btn-danger btn-delete-user" style="background-color:rgb(255, 187, 0);" (click)="getEksponatiIzizlozbe(i)">
+                Vise
+            </button> </div>
+    
+           
+        </div>
+    </div>
+
+    <div  class="flex justify-center items-center" style=" margin:20px; background-color: rgba(0, 0, 0, 0.6); color:white; border-radius: 5%; width: 400px;">
+        <div class="pr-8 "> <span class="text-xs font-medium" style="color:white"> Cena obilaska: {{ ukupnaCena }} rsd</span> </div>
+        <div class="pr-8 "> <span class="text-xs font-medium" style="color:white"> Vreme obilaska: {{ ukupnoVreme }} minuta</span> </div>
+
+    </div>
+     
+</div>

@@ -1,0 +1,24 @@
+<div class="px-xl-5" style="background-color: rgb(206, 174, 135, 0.9); ">
+  
+    <div class="row"  *ngFor="let e of eksponati">
+        <div class="col-lg-8 mx-auto" style="margin:10px">
+            <!-- List group-->
+            <ul class="list-group shadow">
+                <!-- list group item-->
+                <li class="list-group-item">
+                    <!-- Custom content-->
+                    <p class="mt-0 font-weight-bold mb-2">{{e.naziv}}</p>
+                    <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                        <img src="{{e.url}}" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                      
+                       
+                    </div> <!-- End -->
+                </li> <!-- End -->
+            
+               
+            </ul> <!-- End -->
+             
+            
+        </div>
+        </div>
+    </div>

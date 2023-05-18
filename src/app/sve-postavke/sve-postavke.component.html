@@ -1,0 +1,171 @@
+
+<!-- Navbar section -->
+<nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom">
+
+  <div class="collapse navbar-collapse" id="navbarColor">
+    <ul class="navbar-nav">
+      <li class="nav-item rounded bg-light search-nav-item">
+        <input class="bg-light" id="search" type="text" (keyup)="searchFilter($any($event.target).value)"
+          placeholder="Pretrazi postavke...">
+        <span class="fa fa-search text-muted"></span>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!---FILTERIII-->
+<div class="filter">
+  <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="true"
+  aria-controls="mobile-filter">
+  Filters<span class="fa fa-filter pl-1"></span></button>
+</div>
+  
+  
+  <!-- Sidebar filter section -->
+  <section id="sidebar">
+  
+  <div class="border-bottom pb-2 ml-2">
+  <h4 id="burgundy">Filters</h4>
+  </div>
+  
+  
+  <div class="py-2 border-bottom ml-3">
+  <h6 class="font-weight-bold">Vrsta postavke</h6>
+  <div id="orange"><span class="fa fa-minus"></span></div>
+  
+  
+  <form>
+  <div class="form-group">
+  <input type="radio" (click)="doFilter(ime1.value)" #ime1 value="Stalno" name="vrsta">Stalna postavka
+  </div>
+  <div class="form-group">
+  <input type="radio" (click)="doFilter(ime2.value)" #ime2 value="Periodicno" name="vrsta"> Periodična postavka
+  </div>
+  <div class="form-group">
+  <input type="radio" (click)="doFilter(ime3.value)" #ime3 value="Usputno" name="vrsta">Usputna postavka
+  </div>
+
+  </form>
+  </div>
+  
+  
+  
+  <div class="py-2 border-bottom ml-3">
+  <h6 class="font-weight-bold">Vrsta eksponati</h6>
+  <div id="orange"><span class="fa fa-minus"></span></div>
+  
+  
+  <form>
+  <div class="form-group">
+  <input type="radio" (click)="doFilter1(vrsta1.value)" #vrsta1 value="slike" name="eks">Slike
+  </div>
+  <div class="form-group">
+  <input type="radio" (click)="doFilter1(vrsta2.value)" #vrsta2 value="skulpture" name="eks">Skulpture
+  </div>
+  <div class="form-group">
+  <input type="radio" (click)="doFilter1(vrsta3.value)" #vrsta3 value="grafikaIcrtezi" name="eks">Grafika i crteži
+  </div>
+
+  </form>
+  </div>
+  
+  
+  
+  <div class="py-2 ml-3">
+  <h6 class="font-weight-bold">Broj eksponata</h6>
+  <div id="orange"><span class="fa fa-minus"></span></div>
+  
+  
+  <form>
+  <div class="form-group">
+  <input type="radio" (click)="doFilter3(broj1.value)" #broj1 value="3" name="min">Do 3
+  </div>
+  <div class="form-group">
+  <input type="radio" (click)="doFilter3(broj2.value)" #broj2 value="3-5" name="min">Od 3 do 5
+  </div>
+  <div class="form-group">
+  <input type="radio" (click)="doFilter3(broj3.value)" #broj3 value="5-7" name="min">Od 5 do 7
+  </div>
+
+  </form>
+  </div>
+
+  <button mat-button (click)="restartFilters()"> Restartuj </button>
+  
+  </section>
+
+
+
+
+<!-- SORTIRANJE SECTION  -->
+<section id="products">
+
+  <div class="container">
+
+    <div class="d-flex flex-row">
+
+
+
+      <div class="ml-auto mr-lg-4">
+
+        <div id="sorting" class="border rounded p-1 m-1"> <span class="text-muted">Sortiraj</span>
+
+          <select name="sort" id="sort" (change)="sortiraj($event.target.value)" >
+
+
+
+            <option value="vreme" ><b>Vreme</b></option>
+
+
+
+            <option value="cena"><b>Cena</b></option>
+
+
+
+
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!---------POSTAVKE-->
+    <div class="row">
+
+      <div class="container mt-5 mb-5">
+
+        <div class="row">
+
+          <div class="col-lg-4" *ngFor="let pp of postavke">
+
+            <div class="postavke mt-3 mb-3" style="
+                     
+                            border-radius: 15px;
+                            padding: 15px;
+                            background-color: rgb(253, 253, 253);">
+              <img src="{{pp.url}}" style="border-radius: 10px;">
+              <h1>{{pp.naziv}}</h1>
+              <p>{{pp.tip}}</p>
+              <p>{{pp.cena | currency:' RSD '}}</p>
+
+              <a class="buybtn" (click)="openIzlozbaPage(pp)">Saznaj više &nbsp;</a>
+              <a class="buybtn" (click)="addIzlozbaToObilazak(pp)">Dodaj &nbsp;<i class="bi bi-bag"></i></a>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<df-messenger
+intent="WELCOME"
+chat-title="ChatBot"
+agent-id="a7b9ffea-4aab-49e6-9aa4-041acbeb2d2f"
+language-code="en"
+></df-messenger>
+  
+</section>

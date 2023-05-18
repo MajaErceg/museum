@@ -1,0 +1,52 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand-lg" style="background-color:#ffffff9a;">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink=""
+            style="font-family:'Cormorant Garamond', serif; color: black; font-size: 25px; font-weight:bolder;">
+            Muzej umetnosti D&M</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" >
+            <ul class="navbar-nav ms-auto" >
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="" routerLinkActive="active-link"
+                        >Početna</a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-item nav-link" *ngIf="user" routerLink="sve-postavke/{{user.id}}"
+                        routerLinkActive="active">Sve postavke</a>
+                </li>
+           
+                <li class="nav-item">
+                    <a class="nav-item nav-link" *ngIf="user" routerLink="/obilasci/li/{{user.id}}"
+                        routerLinkActive="active"> Planner </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" *ngIf="!user" routerLink="login" routerLinkActive="active">Uloguj
+                        se</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" *ngIf="!user" routerLink="register" routerLinkActive="active">Registruj
+                        se</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" *ngIf="user" routerLink="/users/edit/{{user.id}}"
+                        routerLinkActive="active">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" *ngIf="user" (click)="logout()">Izloguj se</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- main app container -->
+<div [ngClass]="{ 'bg-light': user }">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>

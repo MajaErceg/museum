@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+    background-color: #ffffff;
+    font-family: 'Open Sans', serif;
+    font-size: 14px
+}
+
+.container-fluid {
+    margin-top: 100px
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.40rem;
+    background-color: black;
+}
+
+.img-sm {
+    width: 130px;
+    height: 130px
+}
+
+.itemside .info {
+    padding-left: 15px;
+    padding-right: 7px;
+}
+
+
+.table-shopping-cart .price-wrap {
+    line-height: 1.2
+}
+
+.table-shopping-cart .price {
+    font-weight: bold;
+    margin-right: 5px;
+    display: block
+}
+
+.text-muted {
+    color: #000000cb !important
+}
+
+a {
+    text-decoration: none !important
+}
+
+.card {
+    padding: 20px;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgb(216, 214, 214);
+    background-clip: border-box;
+    border: 1px solid rgb(98, 95, 95);
+    border-radius: 20px;
+  
+
+}
+
+.itemside {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+.dlist-align {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  
+}
+
+[class*="dlist-"] {
+    margin-bottom: 5px
+}
+
+.coupon {
+    border-radius: 1px
+}
+
+.price {
+    font-weight: 600;
+    color: #000000
+}
+
+.btn{
+    width: 100px;
+    height: 35px;
+    background-color: rgb(238, 211, 93);
+    color: black;
+    border-bottom: 2px solid rgb(250, 239, 138);
+}
+
+
+

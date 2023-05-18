@@ -1,0 +1,76 @@
+﻿<div class="pozadina" >
+    <div class="banner" >
+        <div class="content">
+            <p  style="color: black; font-size:60px" class="mb-5"><b> <i>Muzej D&M <br /> </i> <i>iz Vaseg doma</i></b></p>
+            <a routerLink="sve-postavke/:id">Vidi odmah <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+    <!-- step  -->
+    <div  style=" padding: 20px;">
+    <div class="container mt-5 mb-5" style="background-color:rgb(212, 115, 24); padding: 50px; border-radius: 15px;">
+        <h1 class="text-center"style="font-family:'Cormorant Garamond', serif; color:white; font-size: 50px; font-weight:bolder;">O muzeju...</h1>
+        <div class="row mt-5" style=" padding:30px;background-color:rgb(0,0,0, 0.4) ; border-radius: 5px ;text-align: justify; text-justify: inter-word; color: rgb(255, 255, 255);font-family:'Cormorant Garamond', serif;font-size: 20px;">
+            <p><b>
+                Muzej umetnosti D&M je među vodećim svetskim muzejima umetnosti. Posvećen je istraživanju i prezentaciji
+                umetnosti, prošlosti i sadašnjosti, i ispituje odnos dizajna prema arhitekturi, umetnosti i svakodnevnoj
+                kulturi. U glavnoj zgradi muzeja D&M, muzej svake godine postavlja dve velike privremene izložbe, među
+                kojima su velike samostalne retrospektive kao što su „An Eames Celebration“ (2017) o dizajnerima Čarlsu i
+                Reju Ejmsu, „Aleksandar Žirard“. Univerzum dizajnera“ (2016) ili Alvar Alto (2014), kao i velike izložbe
+                poput „Zdravo, robote. Dizajn između čoveka i mašine« (2017), »The Bauhaus #itsalldesign« (2015) ili
+                »Lighttopia« (2013). Pored toga, u Galeriji Muzeja Vitra se prikazuju manje izložbe, koje često prate
+                savremeniji i eksperimentalni pristup.
+                Vitra Schaudepot, koji su dizajnirali Herzog & de Meuron, predstavlja oko 400 ključnih predmeta iz obimne
+                kolekcije i stoga podseća na jednu od najvećih stalnih kolekcija i istraživačkih lokacija o modernom dizajnu
+                nameštaja širom sveta. Svake godine predstavljanje se proširuje za tri do četiri manje izložbe koje se
+                posebno fokusiraju na predmete iz kolekcije. Često razvijene sa renomiranim dizajnerima, mnoge muzejske
+                izložbe pokrivaju veoma relevantne savremene teme, kao što su buduće tehnologije, održivost ili pitanja
+                poput mobilnosti i društvene odgovornosti. Drugi predstavljaju istorijske teme ili monografske izložbe o
+                legendarnim dizajnerima.
+                Rad Muzeja dizajna Vitra zasniva se na njegovoj kolekciji koja obuhvata ne samo ključne predmete istorije
+                dizajna, već i imanja nekoliko značajnih dizajnerskih ličnosti. Muzejska biblioteka i arhiva dokumenata
+                dostupni su istraživačima na zahtev. Muzej osmišljava svoje izložbe za obilazak, a prikazuju se na mestima
+                širom sveta. U Vitra Campusu, oni su upotpunjeni raznovrsnim programom događaja, vođenim turama i
+                radionicama.
+                Muzej dizajna Vitra je među vodećim svetskim muzejima dizajna. Posvećen je istraživanju i prezentaciji
+                dizajna, prošlosti i sadašnjosti, i ispituje odnos dizajna prema arhitekturi, umetnosti i svakodnevnoj
+                kulturi. U glavnoj zgradi muzeja Frenka Gerija, muzej svake godine postavlja dve velike privremene izložbe,
+                među kojima su velike samostalne retrospektive kao što su „ An Eames Celebration “ (2017) o dizajnerima Čarlsu
+                i Reju Ejmsu, „ Aleksandar Žirard “. Univerzum dizajnera“ (2016) ili Alvar Alto (2014), kao i velike izložbe
+                poput „Zdravo, robote. Dizajn između čoveka i mašine« (2017), »The Bauhaus #itsalldesign« (2015) ili
+                »Lighttopia« (2013).</b>
+               
+            </p>
+    
+        </div>
+    </div>
+</div>
+    
+    <!-- postavke  -->
+    <div class="container mt-4 mb-4">
+        <h2 class="text-center" style="color:white; font-family:'Cormorant Garamond', serif;">Nase postavke</h2>
+        <div class="row">
+            <div class="col-lg-3 mt-3" *ngFor="let p of postavke;index as i">
+                <div class="postavke" *ngIf="i<=3">
+                    <img src="{{p.url}}" />
+                    <h3>{{p.desc}}</h3>
+                    <p >{{p.cena | currency: ' RSD '}}</p>
+                </div>
+            </div>
+        </div>
+        <a routerLink="sve-postavke/:id" class="viewmorebtn">Detaljnije <i class="bi bi-arrow-right"></i></a>
+    </div>
+    
+    <div class="footer-dark" style="text-align: center;" >
+        <div class="container1" style="margin:0 auto;  background-color: rgba(0, 0, 0, 0.5);border-radius: 5px; width:20%; padding:10px">
+          <div class="row1">
+            <div class="col item social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
+                  class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-youtube"></i></a><a href="#"><i
+                  class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google"></i></a>
+                </div>
+          </div>
+          <p class="copyright" style="color: rgb(255, 255, 255);"><b>Daria Rakkad & Maja Ercegovcevic | © 2022 D&M.</b></p>
+        </div>
+      
+      </div>
+    
+    </div>

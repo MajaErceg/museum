@@ -1,0 +1,36 @@
+
+<div mat-dialog-content *ngIf="this.vrednost">
+
+  <p>U koji obilazak zelite da dodate izlozbu ?</p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Moji obilasci</mat-label>
+    <mat-select [(ngModel)]="izabranObilazak" name="o">
+      <mat-option *ngFor="let o of obilasci" [value]="o.naziv">
+        {{o.naziv}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+  <div mat-dialog-content>
+
+    <button mat-button *ngIf="this.vrednost" (click)="promeniVrednost()">KREIRAJ OBILAZAK</button>
+    <div *ngIf="!this.vrednost">
+      <p>Napravite novi obilazak: </p>
+    
+      <input placeholder="Ime" type="text" matInput [(ngModel)]="nazivObilaska" />
+    </div>
+  </div>
+
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Ne, hvala</button>
+  
+  <button *ngIf="!this.vrednost" mat-button [mat-dialog-close]="nazivObilaska" 
+             cdkFocusInitial>Ok</button>
+
+  <button *ngIf="this.vrednost" mat-button [mat-dialog-close]="izabranObilazak" 
+             cdkFocusInitial>Ok</button>
+</div>

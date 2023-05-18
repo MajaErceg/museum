@@ -1,0 +1,51 @@
+
+<div class="card">
+    <h5>Unesite vas komentar i ocenu</h5>
+    <div class="row" *ngFor="let i of izlozbe">
+   
+        <div class="col-10">
+            <div class="comment-box ml-2">
+                
+                <h6>{{i.naziv}}</h6>
+                <div class="rate">
+                    <input (change)="onItemChange($event.target.value)" type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="text">5 stars</label>
+
+                    <input (change)="onItemChange($event.target.value)" type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="text">4 stars</label>
+
+                    <input (change)="onItemChange($event.target.value)" type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="text">3 stars</label>
+
+                    <input (change)="onItemChange($event.target.value)" type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="text">2 stars</label>
+
+                    <input (change)="onItemChange($event.target.value)" type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="text">1 star</label>
+                </div>
+
+                <div class="comment-area">
+                    <textarea class="form-control" #nekoIme placeholder="Koji je vaš komentar?" rows="6"></textarea>
+                </div>
+                <div class="comment-btns mt-2">
+                    <div class="row">
+                        <div class="col-6" style="text-align: left;">
+                            <div class="pull-left">
+                                <button class="btn btn-success send btn-sm"  (click)="napisiKomentar(i, nekoIme.value)" style="color: black;">Pošalji </button>
+                                <!-- <button class="btn btn-success send btn-sm" (click)="oceni(i)" >Oceni</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="col-6" style="text-align: right;">
+    <div class="pull-right">
+        <button style="color:black" class="btn btn-success send btn-sm" [mat-dialog-close] (click)="onCancel()">Otkaži</button>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+﻿
+<!----Bootstrap-->
+<h1 *ngIf="!isAddMode"></h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class="container rounded bg-white mt-5">
+    <div class="row">
+        <div class="col-md-4 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <img  src="assets/images/bg6.png" width="300px; height:500px;">
+               
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
+                        <h6 routerLink="/home">Nazad na početak</h6>
+                    </div>
+                    <h4 class="text-right">Izmeni profil</h4>
+                </div>
+
+                <div class="row mt-2">
+                    
+                    <div class="col-md-6">
+                        <input type="text" formControlName="firstName" placeholder="Ime"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" formControlName="lastName" class="form-control" placeholder="Prezime" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <input type="text" formControlName="email" class="form-control" placeholder="Email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email address is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" formControlName="phone" class="form-control"  placeholder="Broj telefona" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                            <div *ngIf="f.phone.errors.required">Phone is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <input type="text" formControlName="address" class="form-control" placeholder="Adresa" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required">Address is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        
+                        <input type="text" formControlName="username" class="form-control"  placeholder="Korisničko ime" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                            <div *ngIf="f.username.errors.required">Username is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="password">
+                       
+                            <em *ngIf="!isAddMode">(Leave blank to keep the same password)</em>
+                        </label>
+                        <input type="password" formControlName="password" class="form-control" placeholder="Lozinka"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                            </div>
+                        </div>
+                   
+                </div>
+
+                <div class="form-group" style="padding: 20px">
+                    <button [disabled]="loading" class="btn" style="background-color: black; color:white">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Sačuvaj
+                    </button>
+                </div>
+               
+
+
+
+            </div>
+        </div>
+    </div>
+</div></div>
+</form>
+

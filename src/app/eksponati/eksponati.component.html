@@ -1,0 +1,75 @@
+
+<div class="main1" fxFlex fxLayout="column">
+    <div fxFlex fxLayoutAlign="space-around center" id="search-cart-div" style="margin: 0 auto; width: 90%; color:white"> 
+
+        <mat-form-field fxLayoutAlign="center center" style=" background-color:rgba(94, 91, 91, 0.5); width:100%;">
+            <input style="  color:white" matInput type="text" (keyup)="searchFilter($any($event.target).value)"
+                placeholder="Pretrazi eksponate...">
+        </mat-form-field>
+
+    </div>
+
+    <div class="tektNeki" fxFlex fxLayout="column" fxLayoutAlign="center center">
+        <p
+            style=" width:90%; margin:0 auto; background-color:rgba(94, 91, 91, 0.5); padding: 50px; text-align: center; font-size: 24px; font-family: 'Cormorant Garamond', serif; font-weight: bold; color: rgb(255, 255, 255);">
+            {{this.tekst}}
+    </div>
+
+
+    <div class="row" style="width: 100%; margin: 0 auto;">
+
+        <div class="container mt-5 mb-5">
+  
+          <div class="row">
+  
+            <div class="col-lg-4" *ngFor="let e of eksponati">
+  
+              <div class="postavke mt-3 mb-3" style="
+                              border-radius: 15px; margin: 30px; width: 350px; 
+                              padding: 15px;
+                              background-color: rgb(253, 253, 253);">
+                <img src="{{e.url}}" style="border-radius: 10px;">
+                <h1>{{e.naziv}}</h1>
+                <p>{{e.cena | currency:' RSD '}}</p>
+  
+                <a class="buybtn" > <mat-icon (click)="addToFavorites(e)"> {{ e.omiljeni }}</mat-icon></a>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div style="padding-bottom: 30px;">
+        <mat-card fxFlex="400px" *ngFor="let k of komentari" style="margin: 0 auto; width: 50%;  background-color:rgba(94, 91, 91, 0.5);  padding-top: 15px; padding-bottom: 15px;">
+            <h3  style=" text-align: center; font-family: 'Cormorant Garamond', serif;font-weight: bold; color:white"> <i> Utisci o izlozbi.. </i></h3>
+            <mat-card fxFlex="400px" *ngFor="let kk of k">
+
+
+                <mat-card-content style="font-family: 'Cormorant Garamond', serif;font-weight: bold; " fxLayoutAlign="center">
+                    <h3> {{kk.imeUsera}} </h3>
+                </mat-card-content>
+
+                <mat-card-title style="font-family: 'Cormorant Garamond', serif; font-weight: bold; "
+                    fxLayoutAlign="center">
+                     {{kk.tekst}}
+                </mat-card-title>
+
+            </mat-card>
+
+
+            <div fxFlex="400px" style="text-align: center; background-color: rgb(255, 255, 255, 0.8);" >
+                <mat-icon style="color:#FFB400">{{namestar1}}</mat-icon>
+                <mat-icon style="color:#FFB400">{{namestar2}}</mat-icon>
+                <mat-icon style="color:#FFB400">{{namestar3}}</mat-icon>
+                <mat-icon style="color:#FFB400">{{namestar4}}</mat-icon>
+                <mat-icon style="color:#FFB400">{{namestar5}}</mat-icon>
+            </div>
+
+        </mat-card>
+
+
+    </div>
+
+</div>
